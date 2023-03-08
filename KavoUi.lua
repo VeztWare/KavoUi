@@ -122,9 +122,9 @@ local themeStyles = {
     VeztPur = {
         SchemeColor = Color3.fromRGB(126, 6, 232),
         Background = Color3.fromRGB(0, 0, 0),
-        Header = Color3.fromRGB(40, 40, 40),
+        Header = Color3.fromRGB(31, 31, 31),
         TextColor = Color3.fromRGB(255,255,255),
-        ElementColor = Color3.fromRGB(40, 40, 40)
+        ElementColor = Color3.fromRGB(31, 31, 31)
     },
     Vezt = {
         SchemeColor = Color3.fromRGB(255, 140, 0),
