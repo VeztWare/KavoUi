@@ -126,6 +126,13 @@ local themeStyles = {
         TextColor = Color3.fromRGB(255,255,255),
         ElementColor = Color3.fromRGB(31, 31, 31)
     },
+    VeztTwi = {
+        SchemeColor = Color3.fromRGB(43, 85, 140),
+        Background = Color3.fromRGB(0, 0, 0),
+        Header = Color3.fromRGB(192, 192, 192),
+        TextColor = Color3.fromRGB(255,255,255),
+        ElementColor = Color3.fromRGB(31, 31, 31)
+    },
     Vezt = {
         SchemeColor = Color3.fromRGB(255, 140, 0),
         Background = Color3.fromRGB(0, 0, 0),
@@ -189,6 +196,8 @@ function Kavo.CreateLib(kavName, themeList)
             themeList = themeStyles.Vezt
     elseif themeList == "VeztPur" then
             themeList = themeStyles.VeztPur
+    elseif themeList == "VeztTwi" then
+            themeList = themeStyles.VeztTwi
     else
         if themeList.SchemeColor == nil then
             themeList.SchemeColor = Color3.fromRGB(74, 99, 135)
