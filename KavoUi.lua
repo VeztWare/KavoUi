@@ -127,9 +127,9 @@ local themeStyles = {
         ElementColor = Color3.fromRGB(31, 31, 31)
     },
     VeztTwi = {
-        SchemeColor = Color3.fromRGB(43, 85, 140),
+        SchemeColor = Color3.fromRGB(192, 192, 192),
         Background = Color3.fromRGB(0, 0, 0),
-        Header = Color3.fromRGB(192, 192, 192),
+        Header = Color3.fromRGB(43, 85, 140),
         TextColor = Color3.fromRGB(255,255,255),
         ElementColor = Color3.fromRGB(31, 31, 31)
     },
