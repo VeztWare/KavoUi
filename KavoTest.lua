@@ -301,7 +301,7 @@ function Kavo.CreateLib(kavName, themeList)
 
 local avatarIcon = Instance.new("ImageLabel")
 avatarIcon.Name = "AvatarIcon"
-avatarIcon.Parent = title
+avatarIcon.Parent = MainHeader
 avatarIcon.BackgroundTransparency = 1
 avatarIcon.Size = UDim2.new(0, 16, 0, 16) -- Size of the avatar icon
 avatarIcon.Position = UDim2.new(0, title.TextBounds.X + 4, 0, 0) -- Position next to the text frame
