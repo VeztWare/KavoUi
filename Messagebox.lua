@@ -52,14 +52,16 @@ local function ApplyDrag(Component, MainWindow)
     local TouchMoved = false
     local TouchPosition = Vector2.new()
 
-    local InputBeganConn = Component.TouchStarted:Connect(function(input)
-        TouchDown = true
-        TouchMoved = false
-        TouchPosition = input.Position
+    local InputBeganConn = Component.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.Touch then
+            TouchDown = true
+            TouchMoved = false
+            TouchPosition = input.Position
+        end
     end)
 
-    local InputChangedConn = Component.TouchMoved:Connect(function(input)
-        if TouchDown then
+    local InputChangedConn = Component.InputChanged:Connect(function(input)
+        if TouchDown and input.UserInputType == Enum.UserInputType.Touch then
             TouchMoved = true
             local delta = input.Position - TouchPosition
             TouchPosition = input.Position
@@ -69,8 +71,10 @@ local function ApplyDrag(Component, MainWindow)
         end
     end)
 
-    local InputEndedConn = Component.TouchEnded:Connect(function(input)
-        TouchDown = false
+    local InputEndedConn = Component.InputEnded:Connect(function(input)
+        if TouchDown and input.UserInputType == Enum.UserInputType.Touch then
+            TouchDown = false
+        end
     end)
 
     return {
@@ -81,6 +85,7 @@ local function ApplyDrag(Component, MainWindow)
         end
     }
 end
+
 
 function MessageBoxT.Show(option)
     option = typeof(option) == "table" and option or {}
