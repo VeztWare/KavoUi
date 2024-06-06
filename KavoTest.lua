@@ -301,10 +301,10 @@ function Kavo.CreateLib(kavName, themeList)
 
 local avatarIcon = Instance.new("ImageLabel")
 avatarIcon.Name = "AvatarIcon"
-avatarIcon.Parent = MainHeader
+avatarIcon.Parent = title
 avatarIcon.BackgroundTransparency = 1
-avatarIcon.Size = UDim2.new(0, 16, 0, 16) -- Size of the avatar icon
-avatarIcon.Position = UDim2.new(0, title.TextBounds.X + 4, 0, 0) -- Position next to the text frame
+avatarIcon.Size = UDim2.new(0, 32, 0, 32) -- Double the size of the avatar icon
+avatarIcon.Position = UDim2.new(0, title.TextBounds.X + 20, 0, 0) -- Position with spacing from the text frame
 avatarIcon.Image = "rbxthumb://type=AvatarHeadShot&id=" .. tostring(game.Players.LocalPlayer.UserId) .. "&w=48&h=48" -- Get the user's avatar icon
 
 
