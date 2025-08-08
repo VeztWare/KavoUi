@@ -2,9 +2,11 @@ local Kavo = {}
 
 local tween = game:GetService("TweenService")
 local tweeninfo = TweenInfo.new
+local HiddenCore = cloneref(game.CoreGui)
 local input = game:GetService("UserInputService")
 local run = game:GetService("RunService")
-
+--fuck you shitty devs trying to use the gui to detect vezt lmao + fuck you xHeptc for not using common sense to secure your services might switch to my own gui soon anyways
+local funnyCoreGui = gethui and getgui() or HiddenCore
 local Utility = {}
 local Objects = {}
 function Kavo:DraggingEnabled(frame, parent)
@@ -163,10 +165,10 @@ end)
 local LibName = tostring(math.random(1, 100))..tostring(math.random(1,50))..tostring(math.random(1, 100))
 
 function Kavo:ToggleUI()
-    if game.CoreGui[LibName].Enabled then
-        game.CoreGui[LibName].Enabled = false
+    if funnyCoreGui[LibName].Enabled then
+        funnyCoreGui[LibName].Enabled = false
     else
-        game.CoreGui[LibName].Enabled = true
+        funnyCoreGui[LibName].Enabled = true
     end
 end
 
@@ -216,7 +218,7 @@ function Kavo.CreateLib(kavName, themeList)
     local selectedTab 
     kavName = kavName or "Library"
     table.insert(Kavo, kavName)
-    for i,v in pairs(game.CoreGui:GetChildren()) do
+    for i,v in pairs(funnyCoreGui:GetChildren()) do
         if v:IsA("ScreenGui") and v.Name == kavName then
             v:Destroy()
         end
@@ -251,7 +253,7 @@ function Kavo.CreateLib(kavName, themeList)
     blurFrame.Size = UDim2.new(0, 376, 0, 289)
     blurFrame.ZIndex = 999
 
-    ScreenGui.Parent = game.CoreGui
+    ScreenGui.Parent = funnyCoreGui
     ScreenGui.Name = LibName
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     ScreenGui.ResetOnSpawn = false
